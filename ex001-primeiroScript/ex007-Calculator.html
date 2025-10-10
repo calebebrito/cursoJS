@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Numbers</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #main {
+            height: 500px;
+            width: 300px;
+            background-image: linear-gradient(to top,
+                rgb(21, 214, 21) 0%,
+                rgba(0, 0, 0, 0.920) 15%,
+                rgba(0, 0, 0, 0.920) 85%,
+                rgb(21, 214, 21) 100%);
+            border-radius: 18px;
+            padding: 2px 7px 7px 7px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.57);
+            align-content: center;
+            text-align: center;
+            justify-items: center;
+        }
+
+        #txtn1 {
+            width: 70px;
+            height: 30px;
+            margin-right: 6px;
+        }
+        #txtn2 {
+            width: 70px;
+            height: 30px;
+        }
+
+        #btn {
+            height: 25px;
+            margin-left: 15px;
+        }
+
+        #result {
+            background-color: white;
+            width: 70px;
+            height: 30px;
+            padding: 2px;
+            margin-top: 25px;
+            font-size: 17pt;
+            border-radius: 5px;
+            align-content: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .mais {
+            display: inline;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+        <div id="main">
+            <h1>Calculator</h1>
+            <input type="number" name="txtn1" id="txtn1"><div class="mais">+</div>
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Calculate" onclick="add()" id="btn">
+            <div id="result">Result</div>
+        </div>
+
+    <script>
+        function add() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('result')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var r = n1 + n2
+
+            res.innerHTML = r
+        }
+    </script>
+</body>
+</html>
