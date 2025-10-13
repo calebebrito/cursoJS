@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Control</title>
+    <style>
+        * {
+            font-size: 16pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #lvg {
+            padding-left: 5px;
+        }
+
+        #res {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Passport Control</h1>
+    Country: <input type="text" name="lvg" id="lvg">
+    <input type="button" value="Verify" onclick="calculate()">
+    <div id="res"></div>
+
+    <script>
+        function calculate() {
+            var country = document.getElementById('lvg')
+            var res = document.querySelector('div#res')
+            var ctr = country.value
+
+            if(ctr == 'Brazil') {
+                res.innerText = 'Hello Brazilian guy!'
+            }else {
+                res.innerText += 'Welcome Foreigner!'
+            }
+        }
+    </script>
+</body>
+</html>
