@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        * {
+            font-size: 16pt;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{open: true}">
+        <button type="button" x-on:click="open= !open">Open/Close</button>
+        <p x-show="open">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus odio reiciendis eaque inventore aliquam <br> ipsum ratione! Reprehenderit asperiores, ab harum accusamus iure consequuntur odio praesentium ad dolore modi? Autem, tempore?
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        * {
+            font-size: 17pt;
+        }
+    </style>
+</head>
+<body>
+    <section x-data="{
+        search:'',
+        doSearch() {
+            fetch('https://dummyjson.com/products/search?q=' +this.search)
+            .then(res => res.json())
+            .then(console.log);
+        }
+    }"
+    >
+        <input type="search" x-model="search">
+        <button type="button" x-on:click="doSearch">Search</button>
+    </section>
+</body>
+</html>
