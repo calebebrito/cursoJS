@@ -8,21 +8,40 @@
     <style>
         * {
             font-size: 17pt;
+            font-family: Arial, Helvetica, sans-serif;
         }
+
+        body {
+            justify-items: center;
+        }
+
+        #description {
+            font-size: 12pt;
+        }
+
     </style>
 </head>
 <body>
     <section x-data="{
         search:'',
+        result:{},
         doSearch() {
             fetch('https://dummyjson.com/products/search?q=' +this.search)
             .then(res => res.json())
-            .then(console.log);
+            .then(json=>this.result=json);
         }
     }"
     >
-        <input type="search" x-model="search">
-        <button type="button" x-on:click="doSearch">Search</button>
+            <input type="search" x-model="search">
+            <button type="button" x-on:click="doSearch">Search</button>
+            <p style="color:red" x-show="result.products?.length==0">
+                No result found
+            </p>
+        <div x-show="result.products?.length>0">
+            <h4 x-text="result.products[0].title"></h4>
+            <p x-text="result.products[0].description" id="description"></p>
+            <p><strong>Brand</strong> <span x-text="result.products[0].brand"></span></p>
+        </div>
     </section>
 </body>
 </html>

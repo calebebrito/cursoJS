@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        * {
+            font-size: 17pt;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form x-data="{terms:false}">
+        <input type="checkbox" x-model="terms">
+        <button type="submit">Submit</button>
+        <span x-text=""></span>
+    </form> -->
+
+    <!-- <form action="" x-data="{
+        posts:[],
+        submit() {
+            console.log(this.posts)
+        }
+    }"
+    x-on:submit.prevent="submit()"
+    >
+        <input type="checkbox" x-model="posts" value="1"> Post 1 <br>
+        <input type="checkbox" x-model="posts" value="2"> Post 2 <br>
+        <input type="checkbox" x-model="posts" value="3"> Post 3 <br>
+        <span x-text="posts"></span>
+         <button type="submit" x-on:click.prevent="submit()">Delete</button>
+        <button type="submit">Delete</button>
+    </form> -->
+
+    <!-- <div x-data="{plan:''}">
+        <select x-model="plan">
+            <option value="">Select</option>
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual</option>
+        </select>
+        <span x-text="plan"></span>
+
+    </div> -->
+
+    <form action="" x-data="{plan:'monthly'}">
+        <input type="radio" x-model="plan" value="monthly">
+        <input type="radio" x-model="plan" value="annual">
+        <span x-text="plan"></span>
+    </form>
+</body>
+</html>
